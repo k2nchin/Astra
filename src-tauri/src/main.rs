@@ -177,6 +177,7 @@ fn main() {
         .manage(voice::VoiceState::default())
         .plugin(tauri_plugin_autostart::Builder::new().build())
         .plugin(tauri_plugin_shell::init())
+        .plugin(tauri_plugin_updater::Builder::new().build())
         .invoke_handler(tauri::generate_handler![open_app, window_control, search_files, media_control, take_screenshot, desktop::desktop_layout, desktop::desktop_quit, voice::speech_control, gemini::gemini_generate, gemini::gemini_save_key, gemini::gemini_key_status, fish::fish_tts, fish::fish_save_key, fish::fish_key_status])
         .setup(|app| {
             desktop::setup(app)?;

@@ -1,0 +1,11 @@
+{
+  "version": "0.3.0",
+  "notes": "Primera versión pública de Astra con Groq, Fish Audio, rutinas y control local confirmado.",
+  "pub_date": "2026-09-14T00:00:00Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM3JIZHU0cS9ZMVpmYWJSejkvUkVTNmdOWTl0WHBnczlGVVlvZTRleUtyRnA2SWVmM2JvWng3U3liZElXVkNYTXEwZWN2NExwV2RGNTdxY2pBWHBaaVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDEwNjU0CWZpbGU6QXN0cmFfMC4zLjBfeDY0LXNldHVwLmV4ZQprT0JXSXF0NTBrNStvdUR0d0Z5SUVhVTdiSys3bUx3Zk84NjhiWXNzNXB2ZXRaam5RRTlZQVM2dUt5dWNsSlFycnVWQXBxbzUxZUlGbzhZTEFWV0tEdz09Cg==",
+      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.0/Astra_0.3.0_x64-setup.exe"
+    }
+  }
+}

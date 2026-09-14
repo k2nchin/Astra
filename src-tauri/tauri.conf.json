@@ -5,5 +5,6 @@
   "identifier": "com.cubeai.desktop",
   "build": { "beforeDevCommand": "npm run dev", "devUrl": "http://localhost:5173", "beforeBuildCommand": "npm run build", "frontendDist": "../dist" },
   "app": { "windows": [{ "label": "main", "title": "Astra", "width": 88, "height": 88, "visible": false, "fullscreen": false, "transparent": true, "backgroundColor": "#00000000", "decorations": false, "alwaysOnTop": true, "skipTaskbar": true, "resizable": false, "shadow": false }], "security": { "csp": null } },
-  "bundle": { "active": true, "targets": ["nsis"], "resources": ["resources/speech/"], "icon": ["icons/icon.ico", "icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png"], "createUpdaterArtifacts": false, "useLocalToolsDir": true }
+  "bundle": { "active": true, "targets": ["nsis"], "resources": ["resources/speech/"], "icon": ["icons/icon.ico", "icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png"], "createUpdaterArtifacts": true, "useLocalToolsDir": true },
+  "plugins": { "updater": { "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IERFNDFGQ0I4RTA5ODU1RkIKUldUN1Zaamd1UHhCM29vcmY5KzBub1d4emF3ZlR6MUZIMWF4K1ZEK0tLbjBoUjNqdHBXZjIvSGQK", "endpoints": ["https://github.com/k2nchin/Astra/releases/latest/download/latest.json"] } }
 }

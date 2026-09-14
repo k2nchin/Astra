@@ -5,6 +5,7 @@ import { DesktopMascot } from "@/components/DesktopMascot";
 import { useCubeAgent } from "@/hooks/useCubeAgent";
 import { useProactive } from "@/hooks/useProactive";
 import { enable as enableAutostart } from "@tauri-apps/plugin-autostart";
+import { check } from "@tauri-apps/plugin-updater";
 import { installAudioUnlock } from "@/lib/audio";
 import { isTauriRuntime } from "@/lib/actions";
 import { GEMINI_MODEL } from "@/lib/gemini";
@@ -98,6 +99,21 @@ export default function App() {
     void enableAutostart().catch(() => {
       // En modo navegador/demo el plugin no está disponible.
     });
+  }, []);
+
+  // Las actualizaciones solo se descargan desde el endpoint HTTPS firmado de GitHub.
+  useEffect(() => {
+    if (!isTauriRuntime() || import.meta.env.DEV) return;
+    let cancelled = false;
+    void (async () => {
+      try {
+        const update = await check();
+        if (update && !cancelled) await update.downloadAndInstall();
+      } catch {
+        // La ausencia de Internet o de un release no afecta al arranque normal.
+      }
+    })();
+    return () => { cancelled = true; };
   }, []);
 
   const pushToast = useCallback((t: Omit<Toast, "id">, ttl = 4200) => {

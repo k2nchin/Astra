@@ -3,5 +3,5 @@
   "identifier": "default",
   "description": "CUBE AI permissions",
   "windows": ["main"],
-  "permissions": ["core:default", "core:window:default", "core:window:allow-start-dragging", "core:window:allow-show", "core:window:allow-hide", "autostart:default", "shell:default"]
+  "permissions": ["core:default", "core:window:default", "core:window:allow-start-dragging", "core:window:allow-show", "core:window:allow-hide", "autostart:default", "shell:default", "updater:default"]
 }

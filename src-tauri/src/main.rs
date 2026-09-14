@@ -44,6 +44,16 @@ fn open_app(name: String) -> Result<(), String> {
 }
 
 #[tauri::command]
+fn open_url(url: String) -> Result<(), String> {
+    let url = url.trim();
+    let allowed = ["https://www.google.com/search?", "https://www.bing.com/search?", "https://open.spotify.com/search/"];
+    if !allowed.iter().any(|prefix| url.starts_with(prefix)) || url.len() > 2048 || url.chars().any(|c| c == '\r' || c == '\n' || c == '"') {
+        return Err("URL de búsqueda no permitida".into());
+    }
+    Command::new("cmd").args(["/C", "start", "", url]).spawn().map(|_| ()).map_err(|e| format!("No se pudo abrir el navegador: {e}"))
+}
+
+#[tauri::command]
 fn window_control(app: String, command: String) -> Result<(), String> {
     let process = match app.trim().to_lowercase().as_str() {
         "visual studio code" | "code" => "code",
@@ -178,7 +188,7 @@ fn main() {
         .plugin(tauri_plugin_autostart::Builder::new().build())
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_updater::Builder::new().build())
-        .invoke_handler(tauri::generate_handler![open_app, window_control, search_files, media_control, take_screenshot, desktop::desktop_layout, desktop::desktop_quit, voice::speech_control, gemini::gemini_generate, gemini::gemini_save_key, gemini::gemini_key_status, fish::fish_tts, fish::fish_save_key, fish::fish_key_status])
+        .invoke_handler(tauri::generate_handler![open_app, open_url, window_control, search_files, media_control, take_screenshot, desktop::desktop_layout, desktop::desktop_quit, voice::speech_control, gemini::gemini_generate, gemini::gemini_save_key, gemini::gemini_key_status, fish::fish_tts, fish::fish_save_key, fish::fish_key_status])
         .setup(|app| {
             desktop::setup(app)?;
             if let Some(window) = app.get_webview_window("main") {

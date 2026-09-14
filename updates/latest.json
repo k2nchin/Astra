@@ -1,11 +1,11 @@
 {
-  "version": "0.3.4",
-  "notes": "Corrige el uso de la clave Fish Audio cifrada después de guardar la configuración.",
+  "version": "0.3.5",
+  "notes": "Añade búsquedas web seguras y acciones ampliadas para música y Spotify.",
   "pub_date": "2026-09-14T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM2VaTklUekk1WHVIMEY0Y2txYnJSQ2FEZk1yT0g4MW50VXJudWIwM3hPR0ErSUdYdFJTeVlDNnY4Q2N6YXhVZWhidC92RHBmandyZ2YyVWRPWlJvY2drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDEzNTIyCWZpbGU6QXN0cmFfMC4zLjRfeDY0LXNldHVwLmV4ZQpkTnphckd2Qk9xc29Da0lNVFBlU1gvTFlOTGlsb2gyOVRjVksxYk5PRXN5YzdqTUpoaGZYZnhSQlhWdFRjZmk1RHlmcUp2cFVQdnprZ2VNSmdYVDhBZz09Cg==",
-      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.4/Astra_0.3.4_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM21qNTUyNUdJR3A3WStRSEVNUTVqYzlwWDVxd01hRzlHU1JXdU55cWM3alJyM2dsQmNraHJzZDVzVW9HRDVGRXdXVjlDRGx4Mk43UXJLb1BIRS9UbmdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDE0MjUwCWZpbGU6QXN0cmFfMC4zLjVfeDY0LXNldHVwLmV4ZQp0dGJacWphc1BtYllDOFc2K0k2TW43N2RMYU8yMnlHZnB1OTZqcW1TdFlDMEtoQVR6Z3kvMko4cTFuYzdpb1VRblBMNEx4UUJnSEJMakFPM09xcmJDUT09Cg==",
+      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.5/Astra_0.3.5_x64-setup.exe"
     }
   }
 }

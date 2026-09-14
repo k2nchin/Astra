@@ -312,6 +312,14 @@ function route(q: string, lang: string, persona: PersonaId): AgentReply {
     };
   }
 
+  // --- búsqueda web / Spotify ---
+  const webSearch = q.match(/^(?:busca|buscar|búscame|buscame|googlea|search) +(.+)/i);
+  if (webSearch && webSearch[1] && !/^(?:archivos?|documentos?|carpetas?)/i.test(webSearch[1])) {
+    const term = clean(webSearch[1]);
+    const url = `https://www.google.com/search?q=${encodeURIComponent(term)}`;
+    return { kind: "confirm", text: `Puedo buscar «${term}» en Internet. ¿Lo hago?`, followUp: { yes: { kind: "action", text: `Buscando «${term}».`, action: { type: "web_search", label: `Buscar «${term}»`, icon: "globe", payload: { query: term, url } } }, no: "De acuerdo, no haré la búsqueda." } };
+  }
+
   // --- capturas ---
   if (/^(?:(?:haz|toma|guarda) (?:una )?)?(captura(?: de pantalla)?|screenshot|pantallazo)$/.test(q))
     return {

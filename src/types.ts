@@ -25,6 +25,7 @@ export type ActionIcon =
 export type ActionType =
   | "open_app"
   | "search_files"
+  | "web_search"
   | "media"
   | "system"
   | "reminder"
@@ -55,6 +56,7 @@ export interface AgentAction {
     value?: number;
     /** Término estructurado para la búsqueda de archivos. */
     query?: string;
+    url?: string;
   };
 }
 

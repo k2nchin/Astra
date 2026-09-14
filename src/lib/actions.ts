@@ -20,6 +20,9 @@ export async function executeAction(action: AgentAction): Promise<string | null>
       return `Se solicitó abrir ${action.label}.`;
     case "search_files":
       return await invoke<string>("search_files", { query: action.payload?.query ?? action.label });
+    case "web_search":
+      await invoke("open_url", { url: action.payload?.url ?? "" });
+      return `Abrí la búsqueda de «${action.payload?.query ?? action.label}».`;
     case "media":
       await invoke("media_control", { command: action.payload?.command ?? mediaCommand(action.label) });
       return "Control enviado al reproductor activo. Reproducción/pausa alterna el estado actual; debe haber música cargada.";

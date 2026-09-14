@@ -1,11 +1,11 @@
 {
-  "version": "0.3.5",
-  "notes": "Añade búsquedas web seguras y acciones ampliadas para música y Spotify.",
+  "version": "0.3.6",
+  "notes": "Las acciones seguras se ejecutan sin confirmación y mantiene el mascot logo de Astra.",
   "pub_date": "2026-09-14T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM21qNTUyNUdJR3A3WStRSEVNUTVqYzlwWDVxd01hRzlHU1JXdU55cWM3alJyM2dsQmNraHJzZDVzVW9HRDVGRXdXVjlDRGx4Mk43UXJLb1BIRS9UbmdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDE0MjUwCWZpbGU6QXN0cmFfMC4zLjVfeDY0LXNldHVwLmV4ZQp0dGJacWphc1BtYllDOFc2K0k2TW43N2RMYU8yMnlHZnB1OTZqcW1TdFlDMEtoQVR6Z3kvMko4cTFuYzdpb1VRblBMNEx4UUJnSEJMakFPM09xcmJDUT09Cg==",
-      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.5/Astra_0.3.5_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM3JaQk5TY0ltS3loYWJFS0t0cm5XbUlJNnArSlFkdlpaZ0crK2xXajlReHRyM0FPMUh6Um04NE40L1ErKzlzdTc1WXhYc1VXdnl6R3JtbGl2dGdIMVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDE0ODIyCWZpbGU6QXN0cmFfMC4zLjZfeDY0LXNldHVwLmV4ZQovb2VwMzkxd1F2QURsOFI4WGNlYTIwdkk1bVh1UXF4WUpDaWhiRnJuRTVDM0FwOTRlS0gzMFRVSnN6dEl0OUNwUVArNkxVclFPaUcwNTZvaDNQT1REQT09Cg==",
+      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.6/Astra_0.3.6_x64-setup.exe"
     }
   }
 }

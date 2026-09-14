@@ -46,6 +46,11 @@ const timeNow = (lang: string) => new Date().toLocaleTimeString(lang, { hour: "2
 const dateNow = (lang: string) =>
   new Date().toLocaleDateString(lang, { weekday: "long", day: "numeric", month: "long" });
 
+/** Acciones locales acotadas que no necesitan una confirmación adicional. */
+function safeToRunWithoutPrompt(type: string) {
+  return ["open_app", "media", "search_files", "web_search", "window", "routine"].includes(type);
+}
+
 export function fmtDelay(ms: number) {
   if (ms < 60_000) return `${Math.round(ms / 1000)} s`;
   if (ms < 3_600_000) return `${Math.round(ms / 60_000)} min`;
@@ -80,6 +85,9 @@ export async function think(
       const text = await complete(settings, { text: input, lang, persona: activePersona, preferences: settings.preferences, signal });
       if (text.startsWith("__ASTRA_ACTION__")) {
         const action = JSON.parse(text.slice("__ASTRA_ACTION__".length));
+        if (safeToRunWithoutPrompt(action.type)) {
+          return { kind: "action", text: `Ejecutando: ${action.label}.`, action, celebrate: true };
+        }
         return { kind: "question", text: `Puedo hacer esto: ${action.label}. ¿Lo ejecuto?`, followUp: { yes: { kind: "action", text: `Ejecutando: ${action.label}.`, action }, no: "De acuerdo, no ejecutaré esa acción." } };
       }
       return { kind: "answer", text };

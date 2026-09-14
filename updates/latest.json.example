@@ -1,0 +1,11 @@
+{
+  "version": "0.3.1",
+  "notes": "Mejoras de estabilidad y nuevas funciones de Astra.",
+  "pub_date": "2026-09-14T00:00:00Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "PEGA_AQUI_LA_FIRMA_GENERADA_POR_TAURI_SIGNER",
+      "url": "https://TU-DOMINIO/releases/Astra_0.3.1_x64-setup.nsis.zip"
+    }
+  }
+}

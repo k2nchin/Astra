@@ -1,0 +1,357 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --animate-cube-float: cube-float 4.2s ease-in-out infinite;
+  --animate-cube-shadow: cube-shadow 4.2s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.22s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-pop: pop 0.24s cubic-bezier(0.2, 0.9, 0.25, 1.25) both;
+  --animate-ring: ring 1.6s ease-out infinite;
+  --animate-caret: caret 1s steps(1) infinite;
+}
+
+:root {
+  color-scheme: normal;
+}
+
+.desktop-icon { position: fixed; right: 12px; bottom: 12px; padding: 0; border: 0; background: transparent; cursor: grab; touch-action: none; user-select: none; }
+.desktop-icon:active { cursor: grabbing; }
+.desktop-icon > * { pointer-events: none; }
+.desktop-mascot > section {
+  position: fixed; left: 8px !important; top: 8px !important; right: 8px; bottom: var(--mascot-space);
+  width: auto !important; height: auto !important; max-height: none !important;
+  color-scheme: dark;
+}
+.desktop-mascot > section > .cube-scroll { min-height: 0; }
+.desktop-mascot > section > header, .desktop-mascot > section > form { flex-shrink: 0; }
+.desktop-mascot > section > form input { min-width: 0; }
+.desktop-menu, .desktop-notice { padding: 10px; border: 1px solid #ffffff22; border-radius: 16px; background: #16181bf5; color: #f4f4f5; overflow: auto; font-size: 13px; }
+.desktop-menu > button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 10px; border-radius: 8px; text-align: left; }
+.desktop-menu > button:hover { background: #ffffff12; }
+.desktop-notice p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  background-color: transparent !important;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Scrollbars (mini chat) ---------- */
+.cube-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.cube-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+.cube-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ---------- Mascot body motion by state ---------- */
+.cube-body {
+  transform-origin: 50% 60%;
+  will-change: transform;
+}
+.cube-body[data-state="idle"] {
+  animation: aura-float 4.2s ease-in-out infinite, aura-pulse 2.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 7px rgba(56, 189, 248, .62)) drop-shadow(0 8px 16px rgba(0,0,0,.55));
+}
+.cube-body[data-state="listening"] {
+  animation: cube-lean 1.6s ease-in-out infinite;
+}
+.cube-body[data-state="thinking"] {
+  animation: aura-spin 2.4s linear infinite, aura-pulse 1.1s ease-in-out infinite;
+}
+.cube-body[data-state="speaking"] {
+  animation: aura-speak .62s ease-in-out infinite, aura-pulse .8s ease-in-out infinite;
+}
+.cube-body[data-state="happy"] {
+  animation: aura-burst .8s cubic-bezier(0.3, 1.4, 0.5, 1) 1;
+}
+.cube-body[data-state="off"] {
+  animation: none;
+}
+.cube-body.no-idle[data-state="idle"] {
+  animation: none;
+}
+
+@keyframes aura-float { 0%,100% { transform: translateY(0) scale(1) rotate(-1deg); } 50% { transform: translateY(-5px) scale(1.04) rotate(1deg); } }
+@keyframes aura-pulse { 0%,100% { opacity: .92; } 50% { opacity: 1; } }
+@keyframes aura-spin { from { transform: rotate(-4deg) scale(1); } 50% { transform: rotate(4deg) scale(1.08); } to { transform: rotate(356deg) scale(1); } }
+@keyframes aura-speak { 0%,100% { transform: scale(1); } 50% { transform: scale(1.09) translateY(-2px); } }
+@keyframes aura-burst { 0% { transform: scale(.85); filter: brightness(1); } 45% { transform: scale(1.2); filter: brightness(1.7) drop-shadow(0 0 18px #22d3ee); } 100% { transform: scale(1); filter: brightness(1); } }
+
+.cube-shadow {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.cube-shadow[data-state="idle"] {
+  animation: cube-shadow 4.2s ease-in-out infinite;
+}
+.cube-shadow[data-state="speaking"] {
+  animation: cube-shadow 0.62s ease-in-out infinite;
+}
+
+/* ---------- Eyes ---------- */
+.cube-eye {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+.cube-eyes {
+  --g1: rgba(255, 255, 255, 0.85);
+  --g2: rgba(190, 200, 255, 0.45);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: filter 0.3s ease;
+  filter: drop-shadow(0 0 2.5px var(--g1)) drop-shadow(0 0 6px var(--g2));
+}
+/* personalidad Raphael: brillo hielo */
+.cube-eyes[data-tone="ice"] {
+  --g1: rgba(222, 243, 255, 0.95);
+  --g2: rgba(110, 190, 255, 0.75);
+}
+
+/* idle: occasional blink */
+.cube-eyes[data-state="idle"] .cube-eye {
+  animation: cube-blink 5.6s ease-in-out infinite;
+}
+.cube-eyes[data-state="idle"] .cube-eye.right {
+  animation-delay: 0.04s;
+}
+
+/* listening: eyes open wider & brighter, gentle breathing */
+.cube-eyes[data-state="listening"] {
+  filter: drop-shadow(0 0 4px var(--g1)) drop-shadow(0 0 12px var(--g2));
+}
+.cube-eyes[data-state="listening"] .cube-eye {
+  animation: cube-eye-listen 1.4s ease-in-out infinite;
+}
+
+/* thinking: eyes scan left–right and pulse */
+.cube-eyes[data-state="thinking"] {
+  filter: drop-shadow(0 0 3px var(--g1)) drop-shadow(0 0 10px var(--g2));
+}
+.cube-eyes[data-state="thinking"] .cube-eye {
+  animation: cube-eye-think 1.5s ease-in-out infinite;
+}
+
+/* speaking: eyes 'talk' with alternating height */
+.cube-eyes[data-state="speaking"] {
+  filter: drop-shadow(0 0 4px var(--g1)) drop-shadow(0 0 10px var(--g2));
+}
+.cube-eyes[data-state="speaking"] .cube-eye {
+  animation: cube-eye-talk 0.34s ease-in-out infinite alternate;
+}
+.cube-eyes[data-state="speaking"] .cube-eye.right {
+  animation-delay: 0.17s;
+}
+
+/* happy: squint into little arcs */
+.cube-eyes[data-state="happy"] .cube-eye {
+  animation: cube-eye-happy 0.55s ease-out 1 both;
+}
+
+/* off: dim eyes */
+.cube-eyes[data-state="off"] {
+  filter: none;
+  opacity: 0.25;
+}
+
+/* ---------- Audio wave bars ---------- */
+.wave-bar {
+  transform-origin: center;
+  animation: wave 1.05s ease-in-out infinite;
+}
+.wave-bar:nth-child(1) {
+  animation-delay: -0.1s;
+}
+.wave-bar:nth-child(2) {
+  animation-delay: -0.35s;
+}
+.wave-bar:nth-child(3) {
+  animation-delay: -0.6s;
+}
+.wave-bar:nth-child(4) {
+  animation-delay: -0.2s;
+}
+.wave-bar:nth-child(5) {
+  animation-delay: -0.5s;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes cube-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.6deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0.6deg);
+  }
+}
+@keyframes cube-shadow {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scaleX(0.82);
+    opacity: 0.35;
+  }
+}
+@keyframes cube-lean {
+  0%,
+  100% {
+    transform: translateY(-1px) rotate(4deg) scale(1.03);
+  }
+  50% {
+    transform: translateY(-3px) rotate(5deg) scale(1.05);
+  }
+}
+@keyframes cube-wobble {
+  0%,
+  100% {
+    transform: rotate(-3deg) translateY(-1px);
+  }
+  50% {
+    transform: rotate(3deg) translateY(-3px);
+  }
+}
+@keyframes cube-talk-bob {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+@keyframes cube-hop {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-10px) scale(1.06, 0.96);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes cube-blink {
+  0%,
+  91%,
+  95%,
+  100% {
+    transform: scaleY(1);
+  }
+  93% {
+    transform: scaleY(0.08);
+  }
+}
+@keyframes cube-eye-listen {
+  0%,
+  100% {
+    transform: scale(1.08, 1.14);
+  }
+  50% {
+    transform: scale(1.14, 1.24);
+  }
+}
+@keyframes cube-eye-think {
+  0%,
+  100% {
+    transform: translateX(-2.2px) scaleY(0.95);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateX(2.2px) scaleY(1.05);
+    opacity: 1;
+  }
+}
+@keyframes cube-eye-talk {
+  from {
+    transform: scaleY(0.62);
+  }
+  to {
+    transform: scaleY(1.18);
+  }
+}
+@keyframes cube-eye-happy {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: translateY(-1.5px) scaleY(0.35) scaleX(1.2);
+  }
+}
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+@keyframes caret {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cube-body,
+  .cube-shadow,
+  .cube-eye,
+  .wave-bar {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

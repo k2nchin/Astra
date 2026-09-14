@@ -250,7 +250,7 @@ export function SettingsPanel({
 
         {/* ---------- escucha e iniciativa ---------- */}
         <SectionTitle>Escucha e iniciativa</SectionTitle>
-        <p className="text-[11px] leading-relaxed text-zinc-400">Di «Rafael» o «Hey CUBE», espera a «Te escucho…» y habla. El audio se reconoce localmente en español. Si conectas Gemini, el texto de tu petición se envía a Google.</p>
+        <p className="text-[11px] leading-relaxed text-zinc-400">Di «Astra» o «Hey Astra», espera a «Te escucho…» y habla. El audio se reconoce localmente en español.</p>
         {voiceError && <p role="alert" className="text-[11px] text-amber-300">{voiceError}</p>}
 
         <Toggle

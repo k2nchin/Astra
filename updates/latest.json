@@ -1,11 +1,11 @@
 {
-  "version": "0.3.2",
-  "notes": "Actualiza el modelo Groq y corrige la identidad visible de Astra.",
+  "version": "0.3.3",
+  "notes": "Astra es ahora el nombre visible en toda la interfaz y se activa diciendo Astra.",
   "pub_date": "2026-09-14T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM2lpc3FOdXVWb3BwM09lcVNSWDMvL0ZhYkJHK2NoZXhZZFhxSWE1K2tVRW5veW5XRkIySGkyS1lCMGVwbzV0Y2Jhd1dwV0ZmZXoxbTFHNHFMa09Ya2cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDExNjM1CWZpbGU6QXN0cmFfMC4zLjJfeDY0LXNldHVwLmV4ZQptYnMrRkltdTEwYjYxNDQzaWJiS1UrSUV3K2dVNHpUWEZYYnhoNTI4OUZWL2xJakZpL2hwY2t1RGFqWWQ0bGdvV2VPcjVPaXhvVVpubitvcTgyVUJBQT09Cg==",
-      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.2/Astra_0.3.2_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM2xsSW1jSHJGcEVzZnpFTGxPWEdRVHZwTjNEK2NnUitTQXkzK3BNaCtTdWFoVXRBbVhTSUN3aldKVGpiWWVBQVdxTmltVHNxbTJFMGtRcitVYVhJa0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDEyNzYyCWZpbGU6QXN0cmFfMC4zLjNfeDY0LXNldHVwLmV4ZQp1bVR0WGNEQUJvVkhuRXhIY3kzNTdiZUlhdEs5TURZcW90NU04b21abmNsUDd4Y3o4bFpTVFFpN1lkMTQrazNERURlOGRLOVh2VGRra3NlVDRxWkdBdz09Cg==",
+      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.3/Astra_0.3.3_x64-setup.exe"
     }
   }
 }

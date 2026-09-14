@@ -101,7 +101,7 @@ export function Desktop({
         <DesktopIcon label="Proyectos">
           <Folder className="h-7 w-7 text-zinc-300" strokeWidth={1.4} />
         </DesktopIcon>
-        <DesktopIcon label="CUBE AI" onDoubleClick={onLaunchCube} title="Doble clic para abrir CUBE AI">
+        <DesktopIcon label="ASTRA" onDoubleClick={onLaunchCube} title="Doble clic para abrir Astra">
           <CubeMascot state={running ? "idle" : "off"} size={30} ground={false} idleMotion={false} tone={eyeTone} />
         </DesktopIcon>
       </div>
@@ -112,7 +112,7 @@ export function Desktop({
           <div className="min-w-0">
             <div className="mb-0.5 text-[9.5px] uppercase tracking-[0.24em] text-zinc-500">Prototipo web · MVP manos libres</div>
             Este fondo simula tu escritorio. CUBE te <span className="text-white">saluda y habla por su cuenta</span>, y con el
-            micrófono permitido basta con decir <span className="text-white">«Hey CUBE, abre Blender»</span>: sin clics. En la
+            micrófono permitido basta con decir <span className="text-white">«Hey Astra, abre Blender»</span>: sin clics. En la
             versión <span className="text-white">Tauri</span> solo existirá el mascot (ventana transparente, always-on-top).
           </div>
           <button onClick={onDismissNote} aria-label="Cerrar nota" className="mt-0.5 shrink-0 text-zinc-500 hover:text-white">
@@ -123,7 +123,7 @@ export function Desktop({
 
       {/* ---------- marca ---------- */}
       <div className="pointer-events-none absolute bottom-16 left-5 select-none">
-        <div className="text-[13px] font-semibold tracking-[0.42em] text-zinc-200/90">CUBE AI</div>
+        <div className="text-[13px] font-semibold tracking-[0.42em] text-zinc-200/90">ASTRA</div>
         <div className="mt-0.5 text-[9.5px] uppercase tracking-[0.3em] text-zinc-500">Just a small icon. A bigger mind.</div>
       </div>
 
@@ -173,7 +173,7 @@ export function Desktop({
             </TaskButton>
           ))}
           {running && (
-            <TaskButton label="CUBE AI" running onClick={onLaunchCube}>
+          <TaskButton label="ASTRA" running onClick={onLaunchCube}>
               <CubeMascot state={agentState} size={22} ground={false} idleMotion={false} tone={eyeTone} />
             </TaskButton>
           )}
@@ -184,7 +184,7 @@ export function Desktop({
           {running && (
             <button
               onClick={onToggleCube}
-              title={visible ? "Ocultar CUBE AI" : "Mostrar CUBE AI"}
+              title={visible ? "Ocultar Astra" : "Mostrar Astra"}
               className={cn(
                 "grid h-8 w-8 place-items-center rounded-md transition-colors hover:bg-white/10",
                 !visible && "opacity-60",

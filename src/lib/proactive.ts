@@ -27,9 +27,9 @@ export function greeting(ctx: ProactiveContext, persona: PersonaId): AgentReply 
 
   if (persona === "raphael") {
     const tail = hf
-      ? "Escucha activa: pronuncie «Hey CUBE» o «Rafael» para emitir una orden."
+      ? "Escucha activa: pronuncie «Hey Astra» para emitir una orden."
       : ctx.handsFree === "starting"
-        ? "Acceso al micrófono pendiente. Una vez concedido, bastará con pronunciar «Hey CUBE»."
+        ? "Acceso al micrófono pendiente. Una vez concedido, bastará con pronunciar «Hey Astra»."
         : "Activación disponible mediante clic o Control + Espacio.";
     return {
       kind: "greeting",
@@ -38,9 +38,9 @@ export function greeting(ctx: ProactiveContext, persona: PersonaId): AgentReply 
   }
 
   const tail = hf
-    ? "Estoy escuchando: di «Hey CUBE» cuando me necesites."
+    ? "Estoy escuchando: di «Hey Astra» cuando me necesites."
     : ctx.handsFree === "starting"
-      ? "En cuanto me des permiso de micrófono, bastará con decir «Hey CUBE»."
+      ? "En cuanto me des permiso de micrófono, bastará con decir «Hey Astra»."
       : "Tócame, o pulsa Ctrl + Espacio, y te escucho.";
   return { kind: "greeting", text: `${hello}. ${tail}` };
 }
@@ -181,8 +181,8 @@ const NUDGES: Nudge[] = [
     build: (_c, R) => ({
       kind: "notice",
       text: R
-        ? "Aviso. No se requiere contacto físico. Pronuncie «Hey CUBE» o «Rafael» seguido de la orden."
-        : "Recuerda: no hace falta tocarme. Di «Hey CUBE, abre Blender» y lo hago.",
+        ? "Aviso. No se requiere contacto físico. Pronuncie «Hey Astra» seguido de la orden."
+        : "Recuerda: no hace falta tocarme. Di «Hey Astra, abre Blender» y lo hago.",
     }),
   },
   {
@@ -244,8 +244,8 @@ const NUDGES: Nudge[] = [
     build: (_c, R) => ({
       kind: "notice",
       text: R
-        ? "Aviso. Para suprimir avisos no esenciales, pronuncie «Hey CUBE, no molestar»."
-        : "Si hablo demasiado, di «Hey CUBE, no molestar» y solo te avisaré de tus recordatorios.",
+        ? "Aviso. Para suprimir avisos no esenciales, pronuncie «Hey Astra, no molestar»."
+        : "Si hablo demasiado, di «Hey Astra, no molestar» y solo te avisaré de tus recordatorios.",
     }),
   },
 ];

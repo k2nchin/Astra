@@ -188,7 +188,7 @@ export const DEFAULT_SETTINGS: Settings = {
   voiceURI: null,
   voiceProvider: "fish",
   fishApiKey: "",
-  fishReferenceId: "",
+  fishReferenceId: "26fab9fe8a6f43e19bf78192e9ebc87c",
   customCommands: [],
   routines: [],
   preferences: [],

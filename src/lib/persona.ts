@@ -51,7 +51,7 @@ export const PERSONAS: Record<PersonaId, PersonaMeta> = {
     },
     eyeTone: "neutral",
     quick: ["Sí", "No"],
-    wake: "«Rafael» / «Hey CUBE»",
+    wake: "«Astra» / «Hey Astra»",
   },
   raphael: {
     id: "raphael",
@@ -72,7 +72,7 @@ export const PERSONAS: Record<PersonaId, PersonaMeta> = {
     },
     eyeTone: "ice",
     quick: ["YES", "NO"],
-    wake: "«Hey CUBE» o «Rafael»",
+    wake: "«Hey Astra»",
   },
 };
 
@@ -181,7 +181,7 @@ const PHRASES: Record<PhraseKey, Record<PersonaId, string>> = {
       "Aviso. Habilidad Definitiva «Raphael, Señor de la Sabiduría» activada. Individuo: Maestro. A la espera de órdenes.",
   },
   voiceTest: {
-    cube: "Hola, soy CUBE. Así sueno con esta voz.",
+    cube: "Hola, soy Astra. Así sueno con esta voz.",
     raphael: "Aviso. Prueba de voz en curso. Individuo: Maestro. Todos los sistemas operativos.",
   },
   reminderNote: {

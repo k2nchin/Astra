@@ -17,7 +17,7 @@ import { shutdownNativeSpeech } from "./nativeSpeech";
  * Whisper), manteniendo exactamente esta interfaz de eventos.
  */
 
-export const WAKE_WORDS = ["Hey Astra", "Oye Astra", "Hola Astra", "Hey CUBE", "Oye CUBE", "Hola CUBE", "Rafael"];
+export const WAKE_WORDS = ["Hey Astra", "Oye Astra", "Hola Astra", "Astra"];
 
 /**
  * Variantes que el reconocedor (sobre todo en español) suele producir al oír
@@ -25,7 +25,7 @@ export const WAKE_WORDS = ["Hey Astra", "Oye Astra", "Hola Astra", "Hey CUBE", "
  * cambia su personalidad ni su voz.
  */
 const WAKE_RE =
-  /(?:^|[\s,.])(?:hey|ey|eh|oye|oe|ok|okey|okay|hola)?[\s,]*(?:astra|astraia|cube|cubo|cubos|cubes|kiub|kiube|quiub|kyub|kub|cuve|kiuv|cub|rafael|rafa|raphael)(?=$|[\s,.!?¡¿])[\s,.!?¡¿]*/i;
+  /(?:^|[\s,.])(?:hey|ey|eh|oye|oe|ok|okey|okay|hola)?[\s,]*(?:astra|astraia)(?=$|[\s,.!?¡¿])[\s,.!?¡¿]*/i;
 
 export function matchWake(text: string): { command: string } | null {
   const m = WAKE_RE.exec(text);

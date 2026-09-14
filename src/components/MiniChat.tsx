@@ -34,7 +34,7 @@ export function MiniChat({ agent, persona, style, onClose, onOpenSettings }: Pro
   const meta = PERSONAS[persona];
   const { messages, state, ask, toggleListening, transcript, micMode, clearMessages, bubble, handsFree, quickReply } = agent;
   const hf = handsFree === "active" || handsFree === "paused";
-  const statusLabel = state === "idle" && hf ? "escuchando «Hey CUBE»" : STATE_LABEL[state];
+  const statusLabel = state === "idle" && hf ? "escuchando «Hey Astra»" : STATE_LABEL[state];
   const [text, setText] = useState("");
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -62,7 +62,7 @@ export function MiniChat({ agent, persona, style, onClose, onOpenSettings }: Pro
     <section
       className="animate-pop fixed z-[70] flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/85 shadow-[0_24px_70px_-16px_rgba(0,0,0,0.9)] backdrop-blur-2xl"
       style={{ ...style, width: CHAT_W, height: CHAT_H }}
-      aria-label="Chat con CUBE AI"
+      aria-label="Chat con Astra"
       onContextMenu={(e) => e.stopPropagation()}
     >
       {/* header */}
@@ -70,7 +70,7 @@ export function MiniChat({ agent, persona, style, onClose, onOpenSettings }: Pro
         <CubeMascot state={state} size={22} ground={false} idleMotion={false} tone={meta.eyeTone} />
         <div className="flex-1 leading-tight">
           <div className="text-[11px] font-semibold tracking-[0.28em] text-zinc-100">
-            CUBE AI
+            ASTRA
             {persona !== "cube" && (
               <span className="ml-1.5 text-[9px] font-normal tracking-[0.18em] text-zinc-500">· {meta.name.toUpperCase()}</span>
             )}
@@ -113,7 +113,7 @@ export function MiniChat({ agent, persona, style, onClose, onOpenSettings }: Pro
               )}
             >
               {m.proactive && (
-                <span className="mr-1 text-[10px] text-zinc-500" title="CUBE lo dijo por iniciativa propia">
+                <span className="mr-1 text-[10px] text-zinc-500" title="Astra lo dijo por iniciativa propia">
                   ✦
                 </span>
               )}
@@ -193,7 +193,7 @@ export function MiniChat({ agent, persona, style, onClose, onOpenSettings }: Pro
           ref={inputRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Dile algo a CUBE…"
+          placeholder="Dile algo a Astra…"
           className="h-8 flex-1 rounded-full border border-white/10 bg-white/[0.04] px-3 text-[12.5px] text-zinc-100 outline-none placeholder:text-zinc-500 focus:border-white/25"
         />
         <button

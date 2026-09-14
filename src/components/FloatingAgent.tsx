@@ -208,8 +208,8 @@ export function FloatingAgent({ agent, settings, onSettingsChange, onHide, onExi
           tabIndex={0}
           aria-label={
             hfLive
-              ? "CUBE AI — di «Hey CUBE» o haz clic para hablar, doble clic para chat"
-              : "CUBE AI — clic para hablar, doble clic para chat"
+              ? "ASTRA — di «Hey Astra» o haz clic para hablar, doble clic para chat"
+              : "ASTRA — clic para hablar, doble clic para chat"
           }
           className={cn("relative grid place-items-center outline-none", dragging ? "cursor-grabbing" : "cursor-grab")}
           style={{ width: size, height: size, touchAction: "none" }}
@@ -265,7 +265,7 @@ export function FloatingAgent({ agent, settings, onSettingsChange, onHide, onExi
                   : busy
                     ? "Interrumpir"
                     : hfLive
-                      ? "Escuchando «Hey CUBE» · clic para hablar (Ctrl+Espacio)"
+                      ? "Escuchando «Hey Astra» · clic para hablar (Ctrl+Espacio)"
                       : "Hablar (Ctrl+Espacio)"
               }
               className={cn(
@@ -294,7 +294,7 @@ export function FloatingAgent({ agent, settings, onSettingsChange, onHide, onExi
               <button
                 ref={menuBtnRef}
                 onClick={openMenuFromButton}
-                aria-label="Menú de CUBE"
+              aria-label="Menú de Astra"
                 title="Menú"
                 className="grid h-[22px] w-[22px] place-items-center rounded-full border border-white/15 bg-zinc-900/80 text-zinc-300 shadow-lg backdrop-blur transition-all hover:border-white/40 hover:text-white"
               >
@@ -337,7 +337,7 @@ export function FloatingAgent({ agent, settings, onSettingsChange, onHide, onExi
       {hint && state === "idle" && !bubble && !chatOpen && !settingsOpen && !menu && (
         <div className="animate-fade-up fixed z-[55]" style={{ ...hintAnchor.style, width: HINT_W }}>
           <div className="rounded-xl border border-white/10 bg-zinc-900/85 px-3 py-2 text-[11px] leading-relaxed text-zinc-300 shadow-xl backdrop-blur">
-            <div className="mb-1 text-[9.5px] uppercase tracking-[0.22em] text-zinc-500">CUBE AI</div>
+            <div className="mb-1 text-[9.5px] uppercase tracking-[0.22em] text-zinc-500">ASTRA</div>
             {hf ? (
               <>
                 Di <b className="font-medium text-white">{persona.wake}</b> y te escucho
@@ -351,7 +351,7 @@ export function FloatingAgent({ agent, settings, onSettingsChange, onHide, onExi
             <b className="font-medium text-white">Arrastra</b> para mover
             {handsFree === "denied" && (
               <div className="mt-1.5 flex items-center justify-between gap-2 border-t border-white/10 pt-1.5 text-zinc-400">
-                <span>Sin micrófono no puedo oír «Hey CUBE».</span>
+                <span>Sin micrófono no puedo oír «Hey Astra».</span>
                 <button
                   onClick={allowMic}
                   className="shrink-0 rounded-full border border-white/20 px-2 py-0.5 text-[10.5px] text-white hover:bg-white/10"

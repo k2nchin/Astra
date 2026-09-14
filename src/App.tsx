@@ -183,7 +183,7 @@ export default function App() {
     setVisible(false);
     pushToast(
       {
-        text: "CUBE AI se ha cerrado",
+        text: "Astra se ha cerrado",
         detail: "Doble clic en el icono del escritorio para volver a abrirlo.",
         action: { label: "Reabrir", onClick: relaunch },
       },

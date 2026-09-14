@@ -129,7 +129,7 @@ function route(q: string, lang: string, persona: PersonaId): AgentReply {
       kind: "answer",
       text: t(
         "Soy Astra, tu agente de escritorio. Vivo en esta esquina y actúo sobre tu PC cuando me lo pides.",
-        "Respuesta. Designación: CUBE AI, Señor de la Sabiduría. Función: análisis, asistencia y ejecución de órdenes sobre este equipo.",
+        "Respuesta. Designación: Astra, asistente de escritorio. Función: análisis, asistencia y ejecución de órdenes sobre este equipo.",
       ),
     };
   if (/^(muchas )?(gracias|thanks)$/.test(q))

@@ -68,7 +68,7 @@ export function DesktopMascot({ agent, settings, onSettingsChange }: Props) {
     window.clearTimeout(clickTimer.current);
     // Do not capture the pointer or move the HTML element: Windows moves the window.
     void getCurrentWindow().startDragging().catch((reason: unknown) => {
-      setError(`No pude mover CUBE: ${String(reason)}`);
+      setError(`No pude mover Astra: ${String(reason)}`);
     });
   };
 
@@ -78,12 +78,12 @@ export function DesktopMascot({ agent, settings, onSettingsChange }: Props) {
       micMode={agent.micMode} handsFree={agent.handsFree} voiceError={agent.voiceError}
       onRetryHandsFree={() => { onSettingsChange({ handsFree: true }); agent.retryHandsFree(); }}
       onTestVoice={agent.testVoice} onResetPosition={() => setReset((n) => n + 1)} onClose={() => setPanel(null)} />}
-    {panel === "menu" && <section className="desktop-menu" aria-label="Menú de CUBE">
+    {panel === "menu" && <section className="desktop-menu" aria-label="Menú de Astra">
       <button onClick={() => setPanel("chat")}><MessageSquare size={16} /> Chat</button>
       <button onClick={() => { setPanel(null); void agent.toggleListening(); }}><Mic size={16} /> Hablar ahora</button>
       <button onClick={() => setPanel("settings")}><Settings2 size={16} /> Configuración y micrófono</button>
       <button onClick={() => { setPanel(null); agent.dismissBubble(); void getCurrentWindow().hide(); }}><EyeOff size={16} /> Ocultar en bandeja</button>
-      <button onClick={() => void invoke("desktop_quit")}><Power size={16} /> Salir de CUBE</button>
+      <button onClick={() => void invoke("desktop_quit")}><Power size={16} /> Salir de Astra</button>
       <button onClick={() => setPanel(null)}><X size={16} /> Cerrar menú</button>
     </section>}
     {notice && <section className="desktop-notice" aria-live="polite">
@@ -91,8 +91,8 @@ export function DesktopMascot({ agent, settings, onSettingsChange }: Props) {
       <p>{error || (agent.state === "listening" ? agent.transcript || "Te escucho…" : agent.bubble?.text)}</p>
       {agent.bubble?.quickReplies && <div className="mt-3 flex gap-4"><button onClick={() => agent.quickReply(true)}>Sí</button><button onClick={() => agent.quickReply(false)}>No</button></div>}
     </section>}
-    <button className="desktop-icon" aria-label="CUBE: arrastra para mover; doble clic para chat; clic derecho para menú"
-      title={agent.handsFree === "active" ? "Di Rafael o Hey CUBE · Doble clic: chat · Clic derecho: menú" : "CUBE · Clic derecho: configuración y micrófono"}
+    <button className="desktop-icon" aria-label="Astra: arrastra para mover; doble clic para chat; clic derecho para menú"
+      title={agent.handsFree === "active" ? "Di Astra o Hey Astra · Doble clic: chat · Clic derecho: menú" : "Astra · Clic derecho: configuración y micrófono"}
       style={{ width: settings.size, height: settings.size }}
       onPointerDown={(e) => { if (e.button === 0) { pointer.current = { x: e.screenX, y: e.screenY, moved: false }; suppressClick.current = false; } }}
       onPointerMove={drag} onPointerUp={() => { pointer.current = null; }} onPointerCancel={() => { pointer.current = null; }}

@@ -1,11 +1,11 @@
 {
-  "version": "0.3.0",
-  "notes": "Primera versión pública de Astra con Groq, Fish Audio, rutinas y control local confirmado.",
+  "version": "0.3.1",
+  "notes": "Mascot logo de Astra corregido en el instalador y los accesos directos de Windows.",
   "pub_date": "2026-09-14T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM3JIZHU0cS9ZMVpmYWJSejkvUkVTNmdOWTl0WHBnczlGVVlvZTRleUtyRnA2SWVmM2JvWng3U3liZElXVkNYTXEwZWN2NExwV2RGNTdxY2pBWHBaaVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDEwNjU0CWZpbGU6QXN0cmFfMC4zLjBfeDY0LXNldHVwLmV4ZQprT0JXSXF0NTBrNStvdUR0d0Z5SUVhVTdiSys3bUx3Zk84NjhiWXNzNXB2ZXRaam5RRTlZQVM2dUt5dWNsSlFycnVWQXBxbzUxZUlGbzhZTEFWV0tEdz09Cg==",
-      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.0/Astra_0.3.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM3J0dWFreUtrU0VDU29ueUVTRVEyZnRoZmUvTDA0S3Z3aGJPMFEzY05oQ25pdUpQNU5VYjhnN1hWWktEcmNvalo0MXVZeWNIWVNuU3F4S2RTS0hpWFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDExMjczCWZpbGU6QXN0cmFfMC4zLjFfeDY0LXNldHVwLmV4ZQo5TnpTUE5FaW13NTA0eUJnNFk0QXZtVlNkOU1uSm56RFFuYU1paWs5dFZ4WlFqV0t5OExFcmMvejh1V0tFZkJRL3REZE1jWjBEb2dyZ2NJUTczZmdDUT09Cg==",
+      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.1/Astra_0.3.1_x64-setup.exe"
     }
   }
 }

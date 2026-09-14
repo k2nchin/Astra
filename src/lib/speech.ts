@@ -247,7 +247,8 @@ export async function speak(text: string, opts: SpeakOptions): Promise<void> {
     await sleep(readingTime(text));
     return;
   }
-  if (opts.voiceProvider === "fish" && opts.fishApiKey?.trim() && opts.fishReferenceId?.trim()) {
+  // En Tauri la API key puede estar guardada en DPAPI y no volver al frontend.
+  if (opts.voiceProvider === "fish" && opts.fishReferenceId?.trim() && (opts.fishApiKey?.trim() || isTauri())) {
     await speakFish(text, opts);
     return;
   }

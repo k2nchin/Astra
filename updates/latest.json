@@ -1,11 +1,11 @@
 {
-  "version": "0.3.3",
-  "notes": "Astra es ahora el nombre visible en toda la interfaz y se activa diciendo Astra.",
+  "version": "0.3.4",
+  "notes": "Corrige el uso de la clave Fish Audio cifrada después de guardar la configuración.",
   "pub_date": "2026-09-14T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM2xsSW1jSHJGcEVzZnpFTGxPWEdRVHZwTjNEK2NnUitTQXkzK3BNaCtTdWFoVXRBbVhTSUN3aldKVGpiWWVBQVdxTmltVHNxbTJFMGtRcitVYVhJa0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDEyNzYyCWZpbGU6QXN0cmFfMC4zLjNfeDY0LXNldHVwLmV4ZQp1bVR0WGNEQUJvVkhuRXhIY3kzNTdiZUlhdEs5TURZcW90NU04b21abmNsUDd4Y3o4bFpTVFFpN1lkMTQrazNERURlOGRLOVh2VGRra3NlVDRxWkdBdz09Cg==",
-      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.3/Astra_0.3.3_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUN1Zaamd1UHhCM2VaTklUekk1WHVIMEY0Y2txYnJSQ2FEZk1yT0g4MW50VXJudWIwM3hPR0ErSUdYdFJTeVlDNnY4Q2N6YXhVZWhidC92RHBmandyZ2YyVWRPWlJvY2drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDEzNTIyCWZpbGU6QXN0cmFfMC4zLjRfeDY0LXNldHVwLmV4ZQpkTnphckd2Qk9xc29Da0lNVFBlU1gvTFlOTGlsb2gyOVRjVksxYk5PRXN5YzdqTUpoaGZYZnhSQlhWdFRjZmk1RHlmcUp2cFVQdnprZ2VNSmdYVDhBZz09Cg==",
+      "url": "https://github.com/k2nchin/Astra/releases/download/v0.3.4/Astra_0.3.4_x64-setup.exe"
     }
   }
 }

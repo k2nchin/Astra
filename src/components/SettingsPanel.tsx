@@ -112,7 +112,7 @@ export function SettingsPanel({
       <div className="cube-scroll space-y-3.5 overflow-y-auto px-3.5 py-3">
         <SectionTitle>Modelo y proveedores</SectionTitle>
         <Row label="Proveedor" hint="configuración local del agente">
-          <select aria-label="Proveedor de LLM" value={settings.provider} onChange={(e) => { const provider = e.target.value as Settings["provider"]; onChange({ provider, apiKey: "", apiBaseUrl: "", model: provider === "gemini" ? GEMINI_MODEL : provider === "groq" ? "llama-3.1-8b-instant" : "" }); }} className="h-7 max-w-[136px] rounded-lg border border-white/10 bg-zinc-900 px-2 text-[11px] text-zinc-200 outline-none">
+          <select aria-label="Proveedor de LLM" value={settings.provider} onChange={(e) => { const provider = e.target.value as Settings["provider"]; onChange({ provider, apiKey: "", apiBaseUrl: "", model: provider === "gemini" ? GEMINI_MODEL : provider === "groq" ? "openai/gpt-oss-20b" : "" }); }} className="h-7 max-w-[136px] rounded-lg border border-white/10 bg-zinc-900 px-2 text-[11px] text-zinc-200 outline-none">
             <option value="groq">Groq · gratis</option><option value="gemini">Google Gemini</option><option value="local">Sin LLM</option><option value="openai">OpenAI</option><option value="anthropic">Anthropic</option><option value="custom">Personalizado</option>
           </select>
         </Row>
@@ -161,7 +161,7 @@ export function SettingsPanel({
           <Segmented<PersonaId>
             value={settings.persona}
             options={[
-              { value: "cube", label: "CUBE" },
+              { value: "cube", label: "ASTRA" },
             ]}
             onChange={(v) => onChange({ persona: v, voiceURI: null })}
           />

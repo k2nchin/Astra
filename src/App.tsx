@@ -29,6 +29,7 @@ function loadSettings(): Settings {
     const raw = localStorage.getItem(SETTINGS_KEY);
     if (raw) {
       const saved = { ...DEFAULT_SETTINGS, ...(JSON.parse(raw) as Partial<Settings>), persona: "cube" as const };
+      if (saved.provider === "groq" && (saved.model === "llama-3.1-8b-instant" || !saved.model)) saved.model = "openai/gpt-oss-20b";
       if (localStorage.getItem("cube-ai:gemini-v1") !== "1") {
         if (saved.provider === "local" && !saved.apiKey) {
           saved.provider = "gemini"; saved.model = GEMINI_MODEL; saved.apiBaseUrl = "";

@@ -120,7 +120,7 @@ function route(q: string, lang: string, persona: PersonaId): AgentReply {
     return {
       kind: "greeting",
       text: t(
-        "¡Hola! Soy CUBE. Pequeño por fuera, atento por dentro. ¿Qué hacemos?",
+        "¡Hola! Soy Astra. Pequeña por fuera, atenta por dentro. ¿Qué hacemos?",
         "Aviso. Saludos, Maestro. Esta unidad está operativa. Indique su solicitud.",
       ),
     };
@@ -128,7 +128,7 @@ function route(q: string, lang: string, persona: PersonaId): AgentReply {
     return {
       kind: "answer",
       text: t(
-        "Soy CUBE AI, tu agente de escritorio. Vivo en esta esquina y actúo sobre tu PC cuando me lo pides.",
+        "Soy Astra, tu agente de escritorio. Vivo en esta esquina y actúo sobre tu PC cuando me lo pides.",
         "Respuesta. Designación: CUBE AI, Señor de la Sabiduría. Función: análisis, asistencia y ejecución de órdenes sobre este equipo.",
       ),
     };

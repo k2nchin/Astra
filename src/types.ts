@@ -176,7 +176,7 @@ export const DEFAULT_SETTINGS: Settings = {
   provider: "groq",
   apiKey: "",
   apiBaseUrl: "",
-  model: "llama-3.1-8b-instant",
+  model: "openai/gpt-oss-20b",
   size: 64,
   tts: true,
   idleMotion: true,

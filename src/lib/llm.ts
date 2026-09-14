@@ -79,7 +79,7 @@ export async function complete(settings: Settings, request: LlmRequest): Promise
 
   try {
     const base = endpoint(settings);
-    const model = settings.model.trim() || (settings.provider === "anthropic" ? "claude-3-5-haiku-latest" : settings.provider === "groq" ? "llama-3.1-8b-instant" : "gpt-4o-mini");
+    const model = settings.model.trim() || (settings.provider === "anthropic" ? "claude-3-5-haiku-latest" : settings.provider === "groq" ? "openai/gpt-oss-20b" : "gpt-4o-mini");
     const headers: Record<string, string> = { "Content-Type": "application/json" };
     let body: Record<string, unknown>;
     if (settings.provider === "anthropic") {

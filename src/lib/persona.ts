@@ -35,8 +35,8 @@ export interface PersonaMeta {
 export const PERSONAS: Record<PersonaId, PersonaMeta> = {
   cube: {
     id: "cube",
-    name: "CUBE",
-    tagline: "CUBE · voz calmada estilo Jarvis",
+    name: "ASTRA",
+    tagline: "ASTRA · voz calmada estilo Jarvis",
     // Voz masculina, calmada y pausada; la voz concreta la proporciona
     // Windows mediante SpeechSynthesis.
     voice: {
@@ -147,9 +147,9 @@ type PhraseKey =
 
 const PHRASES: Record<PhraseKey, Record<PersonaId, string>> = {
   welcome: {
-    cube: "Hola. Soy CUBE. Di «Hey CUBE» o escríbeme: puedo abrir programas, buscar archivos, poner música o avisarte cuando toque.",
+    cube: "Hola. Soy Astra. Di «Hey Astra» o escríbeme: puedo abrir programas, buscar archivos, poner música o avisarte cuando toque.",
     raphael:
-      "Aviso. Sistema de asistencia operativo. Pronuncie «Hey CUBE» o «Rafael», o escriba la orden: ejecución de programas, búsqueda de archivos, música y recordatorios.",
+      "Aviso. Sistema Astra operativo. Pronuncie «Hey Astra» o «Rafael», o escriba la orden: ejecución de programas, búsqueda de archivos, música y recordatorios.",
   },
   notHeard: {
     cube: "No te he oído. Toca de nuevo y háblame.",
